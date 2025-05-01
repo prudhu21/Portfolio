@@ -20,8 +20,8 @@ nav {
     content: '';
     display: block;
     width: 0;
+    color: #000;
     height: 2px;
-    background-color: #000;
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -106,27 +106,22 @@ nav {
 }
 
 #navItem1 {
-    color: black;
     font-family: "Roboto";
 }
 
 #navItem2 {
-    color: black;
     font-family: "Roboto";
 }
 
 #navItem3 {
-    color: black;
     font-family: "Roboto";
 }
 
 #navItem4 {
-    color: black;
     font-family: "Roboto";
 }
 
 #navItem5 {
-    color: black;
     font-family: "Roboto";
 }
 
@@ -189,8 +184,23 @@ nav {
 .skill-container:hover {
     animation: fadeInOut 0.5s forwards;
 }
+.icon-img{
+    height: 35px;
+    width: 35px;
+}
 
-
+.animate-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .animate-icon:hover {
+    transform: scale(1.1); /* Zoom effect */
+  }
+ 
+  .animate-icon:hover {
+    animation: fadeInOut 0.6s;
+  }
+  
 @keyframes fadeInOut {
     0% {
         transform: scale(1);
@@ -541,7 +551,8 @@ nav {
     .home-details {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
+        margin-left: 50%; 
     }
     
     .contact-img{
