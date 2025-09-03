@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="portofolio.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const roles = ["Full Stack Developer", "Developer", "Programmer", "Software Engineer"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const dynamicText = document.getElementById("dynamic-text");
+
+    function typeEffect() {
+        if (charIndex < roles[roleIndex].length) {
+            dynamicText.textContent += roles[roleIndex][charIndex];
+            charIndex++;
+            setTimeout(typeEffect, 100);
+        } else {
+            setTimeout(eraseEffect, 1000);
+        }
+    }
+
+    function eraseEffect() {
+        if (charIndex > 0) {
+            dynamicText.textContent = roles[roleIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseEffect, 50);
+        } else {
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeEffect, 500);
+        }
+    }
+
+    typeEffect();
+
+            document.getElementById('contactForm');
+            document.addEventListener("DOMContentLoaded", function (event) {
+            event.preventDefault(); 
+
+            // Retrieve values from the form fields
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const number = document.getElementById('number').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const element = document.querySelector("#your-element-id");
+            if (element) {
+                element.addEventListener("click", yourEventHandler);
+                console.log('Email:', email);
+                console.log('Name:', name);
+                console.log('Number:', number);
+                console.log('Subject:', subject);
+                console.log('Message:', message);
+            } else {
+                console.error("Element not found");
+            }
+            alert('Form submitted successfully! Check console for details.');
+        });
+});
+
+
+</script>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <img width="36" height="36" src="https://img.icons8.com/windows/96/portfolio.png"
+                                 alt="portfolio"/>
+                            Portfolio
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav ml-auto">
+                                <a class="nav-link text-dark" href="#homeSection" id="navItem1">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-dark" href="#skillsSection" id="navItem2">Skills</a>
+                                <a class="nav-link text-dark" href="#projectsSection" id="navItem3">Projects</a>
+                                <a class="nav-link text-dark" href="#certificatesSection" id="navItem4">Certificates</a>
+                                <a class="nav-link text-dark" href="#contactSection" id="navItem5">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <section id="home-section-tag">
+    <div class="container">
+        <div class="row">
+            <div id="homeSection" class="d-flex flex-row home-section">
+                <div class="col-12 col-md-6 d-sm-none d-md-block d-flex justify-content-center">
+                    <img src="./anochring.jpg" class="my-image img-fluid">
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column about-container">
+                        <p class="hello-msg mr-5">Hello I'm</p>
+                        <p class="name">Pavana Prudula Sri A</p>
+                        <h2 class="name">I am a <span id="dynamic-text"></span></h2><br>
+                        <div class="d-flex flex-row mb-3">
+                            <a href="prudula_Resume.pdf" target="_blank">
+                            <button class="btn button1 btn-primary">Resume</button>
+                            </a>
+                            <a  href="#contactSection">
+                            <button class="btn buttons btn-success">Contact Me</button>
+                            </a>
+                        </div>
+                        <div class="icons-container d-flex flex-row justify-content-center">
+                            <div class="icon-circle icons">
+                                <a href="https://www.linkedin.com/in/attuluri-prudula" target="_blank">
+                                    <i class="fa-brands fa-linkedin fa-beat"></i>
+                                </a>
+                            </div>
+                            <div class="icon-circle icons">
+                                <a href="https://github.com/prudhu21" target="_blank">
+                                    <i class="fa-brands fa-github fa-beat"></i>
+                                </a>
+                            </div>
+                            <div class="icon-circle icons">
+                                <a href="https://www.hackerrank.com/profile/attuluripavanap1" target="_blank">
+                                    <i class="fa-brands fa-hackerrank fa-beat"></i>
+                                </a>
+                            </div>
+                        </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <section id="skills-section-tag">
+    <div class="col-12 text-center skill-section-container">
+        <h5 class="skill-heading">Explore</h5>
+        <h1 class="skill-name">My Skills</h1>
+        <h1 class="skill-name">Here are some of my skills on which I have been working on</h1>
+
+        <div id="skillsSection" class="skills-section text-center">
+            <div class="skill-container text-center">
+                <h1 class="skill-cont-name">Frontend & Frameworks</h1>
+                <div class="skill-list d-flex flex-row flex-wrap">
+                    <div class="skill-item">
+                        <i class="fa-brands fa-react fa-xl fa-fade"></i>
+                        <h5 class="skill-name">React Js</h5>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-js fa-xl fa-fade"></i>
+                        <h5 class="skill-name">JavaScript</h5>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-bootstrap fa-xl fa-fade"></i>
+                        <h5 class="skill-name">Bootstrap</h5>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-html5 fa-xl fa-fade"></i>
+                        <h5 class="skill-name">HTML</h5>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-brands fa-css3-alt fa-xl fa-fade"></i>
+                        <h5 class="skill-name">CSS</h5>
+                    </div>
+                </div>
+            </div>
+
+                    <div class="skill-container text-center">
+                        <h1 class="skill-cont-name">Backend & DataBases</h1>
+                        <div class="skill-list d-flex flex-row flex-wrap">
+                            <div class="skill-item">
+                                <i class="fa-solid fa-database fa-fade fa-xl"></i>
+                                <h5 class="skill-name">MySql</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="./nodeJs.png" class="icon-img animate-icon"/>
+                                <h5 class="skill-name">NodeJs</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn-icons-png.freepik.com/256/5105/5105099.png?uid=R163686062&ga=GA1.1.761964938.1707574847&semt=ais_hybrid" class="icon-img animate-icon"/>
+                                <h5 class="skill-name">ExpressJs</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="./firebase.png" class="icon-img animate-icon"/>
+                                <h5 class="skill-name">FireBase</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://cdn-icons-png.freepik.com/256/9698/9698089.png?uid=R163686062&ga=GA1.1.761964938.1707574847&semt=ais_hybrid" class="icon-img animate-icon"/>
+                                <h5 class="skill-name">MongoDB</h5>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-container text-center">
+                        <h1 class="skill-cont-name">Others</h1>
+                        <div class="skill-list d-flex flex-row flex-wrap">
+                            <div class="skill-item">
+                                <i class="fa-brands fa-python fa-fade fa-xl"></i>
+                                <h5 class="skill-name">Git</h5>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fa-solid fa-database fa-fade fa-xl"></i>
+                                <h5 class="skill-name">GitHub</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="./figma.png" class="icon-img animate-icon />
+                                <h5 class="skill-name">Figma</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="./vsc.jpg" class="icon-img animate-icon"/>
+                                <h5 class="skill-name">VSCode</h5>
+                            </div>
+                            <div class="skill-item">
+                                <img src="./powerBi.png" class="icon-img animate-icon"/>
+                                <h5 class="skill-name">PowerBi</h5>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+    </div>
+    </section>
+
+    <section id="projects-section-tag">
+    <div class="col-12 text-center project-section">
+        <h1>Projects</h1>
+        <p class="project-title">I have worked on a range of web applications. Here are some examples of the projects I have developed.</p>
+        <div id="projectsSection" class="d-flex flex-row flex-wrap justify-content-center">
+            
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="./vidyaNest.png" class="project-image"/>
+                <p class="project-heading card-text">VidyaNest</p>
+                <div class="d-flex flex-row justify-content-space-between text-center" style="margin-left: -20px;">
+                    <p class="project-skills card-text">Html|Css|React|NodeJs</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://vidya-nest-5htt.vercel.app/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/VidyaNest" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div> 
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="./detectivegame.jpg" class="project-image"/>
+                <p class="project-heading card-text">Detective Game</p>
+                <div class="d-flex flex-row justify-content-space-between text-center ml-4">
+                    <p class="project-heading card-text project-skills">Html|Css|Js</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://detectivegame.ccbp.tech/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/MasterDetective" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div>            
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="./weatherapi.png" class="project-image"/>
+                <p class="project-heading card-text">WeatherForecastApi</p>
+                <div class="d-flex flex-row justify-content-space-between text-center ml-4">
+                    <p class="project-skills card-text">Html|Css|Js</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://prudhu21.github.io/WeatherAPi/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/WeatherAPi" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div> 
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="searchWikipedia.png" class="project-image"/>
+                <p class="project-heading card-text">SearchWikipedia</p>
+                <div class="d-flex flex-row justify-content-space-between text-center ml-4">
+                    <p class="project-skills card-text">Html|Css|Js</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://wikiscribe.ccbp.tech/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/SearchWikipedia" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div> 
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="./Todos.png" class="project-image"/>
+                <p class="project-heading card-text">TodosReactApp</p>
+                <div class="d-flex flex-row justify-content-space-between text-center ml-5">
+                    <p class="project-skills card-text">React</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://todos-react-app-tan.vercel.app/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/TodosReactApp" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div> 
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="./SnapCart.png" class="project-image"/>
+                <p class="project-heading card-text">SnapCart</p>
+                <div class="d-flex flex-row justify-content-space-between text-center ml-4">
+                    <p class="project-skills card-text">Html|Css</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://agetware-task.vercel.app/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/SnapCart" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div> 
+            <div class="project-cards project-card-container d-flex flex-column">
+                <img src="./DagCheck.png" class="project-image"/>
+                <p class="project-heading card-text">DAGCheck</p>
+                <div class="d-flex flex-row justify-content-space-between text-center ml-4">
+                    <p class="project-skills card-text">Html|Css</p>
+                </div>
+                <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                    <a href="https://next-stem.vercel.app/" target="_blank">
+                        <button class="btn-primary ml-3">View Project</button>
+                    </a>
+                    <a href="https://github.com/prudhu21/DAGCheck" target="_blank">
+                        <button class="btn-success ml-3">View Code</button>
+                    </a>
+                </div> 
+            </div> 
+            <!-- 
+            <div class="project-cards project-card-container d-flex flex-column">
+                    <img src="" class="project-image"/>
+                    <p class="project-heading card-text">TripTravel</p>
+                    <div class="d-flex flex-row justify-content-space-between text-center ml-4">
+                        <p class="project-skills card-text mr-4">MernStack</p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-space-between project-buttons card-footer">
+                        <a href="" target="_blank">
+                            <button class="btn-primary ml-3">View Project</button>
+                        </a>
+                        <a href="" target="_blank">
+                            <button class="btn-success ml-3">View Code</button>
+                        </a>
+                    </div> 
+            </div> 
+            -->
+        </div>
+    </div>
+    </section>
+
+    <section id="certificates-section-tag">
+    <div class="col-12 certificats-section">
+        <div>
+            <p class="certificate-title text-center">My</p>
+            <h3 class="text-center certiificate-heading">Awards & Certificates</h3>
+        </div>
+
+        <div id="certificatesSection" class="certificate-card-container text-center d-flex flex-row justify-content-center">
+
+            <div class="certificate-card">
+                <img src="https://media-content.ccbp.in/certificates/share/EAJMMFBWBR.png" 
+                        class="certificate-image mt-3">
+                <a href="https://certificates.ccbp.in/academy/build-your-own-responsive-website?id=EAJMMFBWBR " target="_blank"
+                        class="d-flex flex-row justify-content-space-between">
+                    <h5 class="text-center card-text card-body">Responsive Website</h5>
+                    <button class="btn btn-primary certificate-button">More</button>
+                </a>
+            </div>
+
+            <div class="certificate-card">
+                <img src="https://media-content.ccbp.in/certificates/share/IDEQBQCYHS.png" 
+                    class="certificate-image mt-3">
+                <a href="https://certificates.ccbp.in/academy/dynamic-web-application?id=IDEQBQCYHS" target="_blank"
+                        class="d-flex flex-row justify-content-space-between">
+                    <h5 class="text-center card-text card-body certificate-name">Dynamic Website</h5>
+                    <button class="btn btn-primary certificate-button">More</button>
+                </a>
+            </div>
+
+            <div class="certificate-card">
+                <img src="./pythonCertificate.jpg" class="certificate-image mt-3">
+                <a href="https://certificates.ccbp.in/academy/programming-foundations-with-python?id=SRLYBEHFOG" target="_blank"
+                    class="d-flex flex-row justify-content-space-between">
+                    <h5 class="text-center card-text card-body">Python</h5>
+                    <button class="btn btn-primary certificate-button">More</button>
+                </a>
+            </div>
+
+            <div class="certificate-card">
+                        <img src="https://media-content.ccbp.in/certificates/share/UNDSYNLEUF.png" 
+                        class="certificate-image mt-3">
+                        <a href="https://certificates.ccbp.in/academy/introduction-to-databases?id=UNDSYNLEUF" target="_blank"
+                            class="d-flex flex-row justify-content-space-between">
+                            <h5 class="text-center card-text card-body">Introduction To DataBases<br>
+                            (Sql)</h5>    
+                            <button class="btn btn-primary certificate-button">More</button>
+                        </a>
+            </div>
+
+            <div class="certificate-card">
+                        <img src="./android.jpg" 
+                        class="certificate-image mt-3">     
+                        <a href="" target="_blank" class="d-flex flex-row justify-content-space-between">
+                            <h5 class="text-center card-text card-body">MAD Using Kotlin<br>
+                                (Android)</h5>
+                            <button class="btn btn-primary certificate-button">More</button>
+                        </a>
+            </div>
+
+            <div class="certificate-card">
+                        <img src="https://cdn1.ccbp.in/misc/uiux_participation_cert_acad/V7WWQ65TIZ.png" 
+                        class="certificate-image mt-3">     
+                        <a href="https://drive.google.com/file/d/1lXodct_Dkv2buZkapAsk0gskkRhJB6AM/view" target="_blank" class="d-flex flex-row justify-content-space-between">
+                            <h5 class="text-center card-text card-body">Figma</h5>
+                            <button class="btn btn-primary certificate-button">More</button>
+                        </a>
+            </div>
+        </div>
+
+    </div>
+    </section>
+    
+    <section id="contact-section-tag">
+    <div class="col-12" id="contactSection">
+        <h1 class="text-center conatct-title">Contact</h1>
+        <p class="text-center">Feel free to reach out to me for any Queries or opportunities!</p>
+        <div class="d-flex flex-row justify-content-start">
+                <div class="d-sm-none d-md-block contact-img">
+                        <img src="https://i.ibb.co/3FTm03r/Screenshot-2024-12-01-011153-removebg-preview.png"
+                        class="contact-image"/>
+                        <p class="contact-connect">Let's Connect</p>
+                        <p class="contact-about-me">I’m a Software Enginner and Web Developer passionate<br> about problem-solving 
+                            and creating user-friendly webpages.<br>
+                             Always open to exciting opportunities!</p>
+                </div>
+
+                <div class="contact-item-container">
+                        <p class="pt-3 text-center ">Email Me 🚀</p>
+                        <form class="mt-4">
+                            <input class="contact-form-element" type="email"
+                            id="email" placeholder="Your Email" required/><br><br>
+
+                            <input class="contact-form-element"  type="text"
+                            id="name" placeholder="Your Name" required/><br><br>
+
+                            <input class="contact-form-element" 
+                            id="number" type="tel" placeholder="Your Number" required/><br><br>
+
+                            <input class="contact-form-element" type="text"
+                            id="subject" placeholder="Subject" required/><br><br>
+
+                            <textarea type="text" placeholder="Message"
+                            id="message" class="contact-form-element-message" required></textarea><br><br>
+
+                            <button class="btn btn-primary">Submit</button>
+                        </form>
+
+                        <div class="icons-container d-flex flex-row justify-content-center ml-4 mt-4">
+                    
+                            <div class="icon-circle icons">
+                                <a href="https://www.linkedin.com/in/attuluri-prudula" target="_blank">
+                                    <i class="fa-brands fa-linkedin fa-beat"></i>
+                                </a>
+                            </div>
+        
+                            <div class="icon-circle icons">
+                                <a href="https://github.com/prudhu21" target="_blank">
+                                    <i class="fa-brands fa-github fa-beat"></i>
+                                </a>
+                            </div>
+        
+                            <div class="icon-circle icons">
+                                <a href="https://www.hackerrank.com/profile/attuluripavanap1" target="_blank">
+                                    <i class="fa-brands fa-hackerrank fa-beat"></i>
+                                </a>
+                            </div>
+        
+                            <div class="icon-circle icons">
+                                <a href="https://www.whatsapp.com" target="_blank">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+    </section>
+
+    <div class="footer-container">
+        <div class="footer-elements mt-4 pb-4 pt-3">
+            <p class=" d-flex justify-content-center">Developed by Prudula Sri Attuluri</p><br>
+                <div class="d-flex flex-row justify-content-center">
+                    <a class="nav ml-5 text-white" href="#homeSection">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav text-white ml-5" href="#skillsSection"">Skills</a>
+                    <a class="nav text-white ml-5" href="#projectsSection">Projects</a>
+                    <a class="nav text-white ml-5" href="#certificatesSection">Certificates</a>
+                    <a class="nav text-white ml-5" href="#contactSection">Contact</a>
+                </div><br>
+            <p>Copyright <i class="fa-regular fa-copyright" style="color: #e8f2ef;"></i> 2025 Portfolio.All Rights Reserved.  
+                                       User Terms And Conditions | Privacy Policy  </p>
+        </div>
+    </div>
+    
+</body>
+
+</html>
